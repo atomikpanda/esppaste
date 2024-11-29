@@ -107,7 +107,7 @@ async def main_async(watch):
 
 @typerApp.command("sync")
 def sync_command():
-    pass
+    asyncio.run(main_async(True))
 
 @typerApp.command()
 def main(watch: bool = typer.Option(False, help="Watch clipboard and sync changes"), value: Optional[str] = typer.Option(None, help="Value to sync to device")):
